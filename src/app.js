@@ -55,11 +55,11 @@ app.post('/transfer', (req, res) => {
     res.render('transfer', {message: 'Transfer Completed'})
 })
 
-router.get('/payment', (req, res) => {
+app.get('/payment', (req, res) => {
     res.render('payment', {account: accounts.credit})
 })
 
-router.post('/payment', (req, res) => {
+app.post('/payment', (req, res) => {
     accounts.credit.balance = accounts.credit.balance - req.body.amount
     accounts.credit.available = parseInt(accounts.credit.available) + parseInt(req.body.amount)
     
