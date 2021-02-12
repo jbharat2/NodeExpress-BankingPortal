@@ -1,8 +1,6 @@
-const fs = require('fs')
 const path = require('path')
 const express = require('express')
-const accountData = fs.readFileSync('src/json/accounts.json', 'utf8')
-const accounts = JSON.parse(accountData)
+
 const { accounts, users, writeJSON } = require('./data')
 
  const app = express()
